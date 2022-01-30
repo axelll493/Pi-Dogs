@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { Link } from "react-router-dom";
 import { getDogs } from "../actions";
-import Card from "./Card";
 import Paginado from "./Paginado";
+import Card from './Card'
+import styles from '../css/DogsGrid.module.css'
 
 export default function Home () {
     const dispatch = useDispatch()
@@ -45,7 +46,7 @@ export default function Home () {
             </div>
             <div>
                 <select>
-                    <option>Weith</option>
+                    <option>Weigth</option>
                     <option>light weight - heavy weight</option>
                     <option>heavy weight - light weight</option>
                 </select>
@@ -62,26 +63,30 @@ export default function Home () {
                     <option>Created</option>
                 </select>
                 <Paginado dogsPerpage={dogsPerPage} allDogs={allDogs.length} paginado={paginado}/>
-            {
-                currentDogs?.map((e)=> {
-                    return(
-                        <div key={e.id}>
-                            <Link to={'/home/' + e.id}>
-                                  <Card 
-                                       name={e.name}
-                                       image={e.image}
-                                       temperament={e.temperament}
-                                       weightMin={e.weightMin}
-                                       weightMax={e.weightMax}
-                                       key={e.id}
-                                  />
-                            </Link>
-                        </div>
-                    )
-                })
-                
-            }
             </div>
+            
+            <ul className={styles.DogsGrid}>
+                {
+                        currentDogs?.map((el) => {
+                        return (
+                            <div key={el.id} className='cardHome'>
+                                <Link to={'/home/' + el.id} style={{ textDecoration: 'none' }} >
+                                    <Card
+                                        name={el.name}
+                                        image={el.image}
+                                        temperaments={el.temperaments}
+                                        weightMin={el.weightMin}
+                                        weightMax={el.weightMax}
+                                        key={el.id}
+                                    />
+                                </Link>
+                            </div>
+                        )
+                    })
+                }
+            </ul>
+            
+        
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../css/Paginado.module.css'
 
 export default function Paginado({dogsPerpage, allDogs, paginado}) {
     const pageNumbers = []
@@ -9,7 +10,16 @@ export default function Paginado({dogsPerpage, allDogs, paginado}) {
 
     return(
         <nav>
-           
+           <ul className={styles.paginado}>
+               {
+                   pageNumbers &&
+                   pageNumbers.map(number=>(
+                       <li className={styles.number} key={number}>
+                           <button className={styles.button} onClick={()=> paginado(number)}>{number}</button>
+                       </li>
+                   ))
+               }
+           </ul>
         </nav>
     )
 }
