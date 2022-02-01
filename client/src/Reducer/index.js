@@ -1,5 +1,6 @@
 const inicialstate = {
-    dogs: []
+    dogs: [],
+    temperament: []
 }
 
 function RootReducer (state= inicialstate, action){
@@ -9,6 +10,24 @@ function RootReducer (state= inicialstate, action){
                 ...state,
                 dogs: action.payload
             }
+        case 'GET_NAME_DOG':
+            return {
+                ...state,
+                dogs: action.payload
+            }
+        case 'FILTER_BY_TEMPERAMENTS':
+            const alldogs = state.dogs
+            const statusFiltered = action.payload === 'All' ? alldogs : alldogs.filter(e => e.temperament === action.payload)
+            return {
+                ...state,
+                dogs: statusFiltered 
+
+            }
+        case 'POST_DOG': {
+            return{
+                ...state
+            }
+        }
         default:
             return state
     }

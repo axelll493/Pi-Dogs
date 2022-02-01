@@ -1,0 +1,13 @@
+.Container{
+  overflow: hidden;
+  background-image: url("../images/LandingPage.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  Height:100vh;
+  scroll-behavior: hidden;
+  overflow: hidden;
+}
+
