@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getDogs} from "../actions";
 import Paginado from "./Paginado";
 import Card from './Card'
-import styles from '../styles/Home.module.css'
+import '../styles/Home.css'
 import NavBar from "./NavBar";
 
 
@@ -28,25 +28,25 @@ export default function Home () {
         dispatch(getDogs())
     },[dispatch])
 
-    function handleClick(e){
+    const handleClick =(e)=>{
         e.preventDefault()
         dispatch(getDogs())
     }
  
     return (
-        <div className={styles.Conteinerr}>
+        <div className={"Conteinerr"}>
             <NavBar
             />
-            <div className={styles.BtnContainer}>
-                <button className={styles.Button} onClick={e => {handleClick(e)}}>
-                         volver a cargar todos los perros
+            <div className={"Btn.Containe"}>
+                <button className="Button home"  onClick={handleClick}>
+                        <strong>Reset Dogs</strong>
                 </button>
-                <button className={styles.Button}>
-                    <Link className = {styles.Link} to= '/dogs'>Crear Perros </Link>
+                <button className="Button home">
+                    <strong><Link className = "Link" to= '/dogs'>Create Dogs</Link></strong>
                 </button>
             </div>
             
-            <ul className={styles.DogsGrid}>
+            <ul className="DogsGrid">
                 
                 {
                         currentDogs?.map((el) => {

@@ -10,7 +10,7 @@ export default function LandingPage() {
                 <h1 className={styles.Title}>Welcome animal expert page</h1>
                 <h3 className={styles.text}>Would you like to know more about your pet?</h3>
             <Link to = '/home/'>
-                 <button className={styles.button}>Let's go!</button>
+                 <button className="btn go"><span>Let's go!</span></button>
             </Link>
             </div>
         </div>

@@ -41,9 +41,12 @@ export function getTemperaments () {
 
 export function PostDogs(payload){
     return async function(dispatch){
-        try{
-            const data = await axios.post("http://localhost:3001/dogs",{})
-            return data
+        try{   
+            const json = await axios.post("http://localhost:3001/dogs",payload)
+            return dispatch({
+                type: "POST_DOG",
+                payload: json.data
+            })
         }catch(error){
             console.log(error)
         }

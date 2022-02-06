@@ -1,87 +1,55 @@
-.fondo {
-    background: url("https://t4.ftcdn.net/jpg/01/91/60/19/360_F_191601919_MWTmmwLxetfWEyeWrAH7EYq6eXQhQP3c.jpg");
-    background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 115vh;
-  overflow: hidden;
-  scroll-behavior: hidden;
+.DogsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 40px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.paginate {
-    font-family: 'Urbanist', sans-serif;
-    font-weight: 900;
-    display: contents;
-    color: rgb(8, 15, 1);;
-    letter-spacing: 5px;
-}
-
-.botones {
-    font-family: 'Urbanist', sans-serif;
-    width: 100px;
-    height: 19px;
-    border-radius: 5px;
-    margin-left: 20px;
-    background-color: black;
-    color: white;
-}
-
-.reload {
-    font-family: 'Urbanist', sans-serif;
-    width: 60px;
-    height: 20px;
-    border-radius: 20px;
-    margin-left: 20px;
-    background-color: rgb(120, 214, 26);
-    color: black;
-}
-
-.reload:hover {
-    transform: scale(1.15)
-}
-
-.temperamento {
-    width: 110px;
-    height: 19px;
-    border-radius: 5px;
-    margin-left: 20px;
-    background-color: black;
-    color: white;
-}
-
-.crea {
-    font-family: 'Urbanist', sans-serif;
-    color: white;
-    background-color: black;
-    border-radius: 5px;
-    margin-left: 20px;
-}
-
-.crea:hover{
-    color: black;
-    background-color: rgb(120, 214, 26);
-}
-
-.title {
-    font-family: 'Urbanist', sans-serif;
-    margin-top: 0.1px;
-    font-size: 70px;
-    -webkit-text-stroke-width: 2.7px;
-    -webkit-text-fill-color: rgb(120, 214, 26);
-}
-
-.card {
-    font-family: 'Urbanist', sans-serif;
-}
-
-.doggys {
+Btn.Container {
+    width: 50%;
     display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: space-around;
-   align-items: center;
-   font-size: large;
-   align-content: space-between;
-   height: 380px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vh;
+    margin-bottom: -10px
 }
+
+
+.Button {
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor:pointer;
+    height: 70%;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin-top: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+.Button:first-of-type {
+    border-right: none;
+}
+
+
+.home {
+    border-color: #f1c40f;
+    color: #fff;
+    background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.home:hover {
+    background-position: 0;
+}
+.Link {
+    text-decoration: none;
+}
+
